@@ -16,14 +16,14 @@ Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you reall
 ## Logs
 - When use SageMaker deploy model in this case, you need specfiy the framework version, in this example, I use '2.1.0', for sagemaker python sdk, you can reference to  [SageMaker Python SDK](https://sagemaker.readthedocs.io/en/v1.71.0/frameworks/tensorflow/sagemaker.tensorflow.html)
 - To depoly model in SageMaker, we need to package model artifcat to model.tar.gz. When package a TFS SavedModel, I first package folder 1 together but found in SageMaker endpoint cloudwatch logs it report load model failed although it showed 'InService', acctually, it didn't work. So I repacakge model without folder 1, in other words, model.tar.gz only contains below:
-(```)
+```bash
 .
 ├── assets
 ├── saved_model.pb
 └── variables
     ├── variables.data-00000-of-00001
     └── variables.index
-(```)
+```
 
 - After model deployed in SageMaker, I use boto3 invoke_endpoint() instead of predicator.predict(), I prefer invoke_endpoint() all the time, and it works well in this case.
 
