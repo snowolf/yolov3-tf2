@@ -8,7 +8,7 @@ This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add
 - [x] Deploy TFS model in Sagemaker model host
 - [x] Both training and serving are use BYOS(Bring Your Own Script) with TF 2.1
 
-Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you really save my time. 
+Again, thanks [zzh8829](https://github.com/zzh8829/yolov3-tf2), you really save my time. 
 
 ## Other things to know
 - You may face download dataset (VOC2012) failed due to no response from Dataset host.
