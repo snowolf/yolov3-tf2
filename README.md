@@ -30,7 +30,6 @@ Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you reall
 ***Hope you enjoy this sample.***
 
 # Below is origin guide, I recommend read it carefully.
-
 ---
 This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all the best practices.
 
