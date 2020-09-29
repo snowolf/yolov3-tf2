@@ -1,4 +1,4 @@
-# YoloV3 Implemented in TensorFlow 2.0
+# YoloV3 Implemented in TensorFlow 2.0 && Train and Deploy on SageMaker
 
 This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add a ipynb notebook - **sagemaker-yolov3.ipynb** notebook which could run on [Amazon SageMaker](https://aws.amazon.com/cn/sagemaker/) notebook instance and use sagemaker to train a YoloV3 model and host the model on sagemaker endpoint.
 
