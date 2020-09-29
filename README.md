@@ -1,6 +1,6 @@
 # YoloV3 Implemented in TensorFlow 2.0
 
-This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add a ipynb notebook - **sagemaker.ipynb** notebook which could run on [Amazon SageMaker](https://aws.amazon.com/cn/sagemaker/) notebook instance and use sagemaker to train a YoloV3 model and host the model on sagemaker endpoint.
+This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add a ipynb notebook - **sagemaker-yolov3.ipynb** notebook which could run on [Amazon SageMaker](https://aws.amazon.com/cn/sagemaker/) notebook instance and use sagemaker to train a YoloV3 model and host the model on sagemaker endpoint.
 
 ## Update Features
 - [x] Training on Sagemaker
@@ -13,7 +13,23 @@ Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you reall
 - You may face download dataset (VOC2012) failed due to no response from Dataset host.
 - I have modifed the train.py to sagemaker-train.py in sagemaker training to avoid confusion. 
 
-**Below is origin guide, I recommend read it carefully.**
+## Logs
+- When use SageMaker deploy model in this case, you need specfiy the framework version, in this example, I use '2.1.0', for sagemaker python sdk, you can reference to  [SageMaker Python SDK](https://sagemaker.readthedocs.io/en/v1.71.0/frameworks/tensorflow/sagemaker.tensorflow.html)
+- To depoly model in SageMaker, we need to package model artifcat to model.tar.gz. When package a TFS SavedModel, I first package folder 1 together but found in SageMaker endpoint cloudwatch logs it report load model failed although it showed 'InService', acctually, it didn't work. So I repacakge model without folder 1, in other words, model.tar.gz only contains below:
+(```)
+.
+├── assets
+├── saved_model.pb
+└── variables
+    ├── variables.data-00000-of-00001
+    └── variables.index
+(```)
+
+- After model deployed in SageMaker, I use boto3 invoke_endpoint() instead of predicator.predict(), I prefer invoke_endpoint() all the time, and it works well in this case.
+
+***Hope you enjoy this sample.***
+
+# Below is origin guide, I recommend read it carefully.
 
 ---
 This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all the best practices.
