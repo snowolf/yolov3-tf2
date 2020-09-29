@@ -1,7 +1,21 @@
 # YoloV3 Implemented in TensorFlow 2.0
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zzh8829/yolov3-tf2/blob/master/colab_gpu.ipynb)
+This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add a ipynb notebook- Sagemaker notebook which could run on SageMaker notebook instance and use sagemaker to train a YoloV3 model and host the model on sagemaker endpoint.
 
+## Update Features
+- [x] Training on Sagemaker
+- [x] Convert ckpt to a TFS model which could be used in TF Serving
+- [x] Deploy TFS model in Sagemaker model host
+
+Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you really save my time. 
+
+## Other things to know
+- You may face download dataset (VOC2012) failed due to no response from Dataset host.
+- I have modifed the train.py to sagemaker-train.py in sagemaker training to avoid confusion. 
+
+**Below is origin guide, I recommend read it carefully.**
+
+---
 This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all the best practices.
 
 ## Key Features
