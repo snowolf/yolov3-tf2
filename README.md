@@ -6,7 +6,7 @@ This repo is forked from [zzh8829](https://github.com/zzh8829/yolov3-tf2), I add
 - [x] Training on Sagemaker
 - [x] Convert ckpt to a TFS model which could be used in TF Serving
 - [x] Deploy TFS model in Sagemaker model host
-- [x] Both training and Serving are use BYOS(Bring Your Own Script)
+- [x] Both training and serving are use BYOS(Bring Your Own Script) with TF 2.1
 
 Again, thanks agagin [zzh8829](https://github.com/zzh8829/yolov3-tf2), you really save my time. 
 
